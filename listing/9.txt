@@ -1,0 +1,16 @@
+Сколько существует способов задать переменную типа slice или map?
+
+
+Ответ
+    5
+    var slice = []int{1, 2}
+    slice := []int{1, 2}
+    slice := make([]int, 2)
+    slice := new([]int)
+    slice := oldSlice[1:]
+
+    4
+    var hashMap = map[int]int{1:2}
+    hashMap := map[int]int{1:2}
+    hashMap := make(map[int]int)
+    hashMap := new(map[int]int)

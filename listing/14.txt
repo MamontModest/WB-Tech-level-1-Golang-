@@ -1,0 +1,20 @@
+Что выведет данная программа и почему?
+
+
+func main() {
+  slice := []string{"a", "a"}
+
+  func(slice []string) {
+     slice = append(slice, "a")
+     slice[0] = "b"
+     slice[1] = "b"
+     fmt.Print(slice)
+  }(slice)
+  fmt.Print(slice)
+}
+
+
+Ответ: внутри func выведет [b, b, a]
+       в main выведет [a, a, a] , так как capacity slice = 2, то при добавление элемента, он будет скопирован и перемещён
+       в другую ячейку памяти => у slice внутри func и slice внутри main разные ячейки памяти. Значит их значения не зависят
+       друг от друга.
