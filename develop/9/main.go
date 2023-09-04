@@ -13,7 +13,7 @@ func main() {
 	for i := 0; i < 5; i++ {
 		//добавляют x в канал ch1
 		go workerOne(ch1, rd)
-		//добавляют x*2 в канал ch2
+		//добавляют x* 2 в канал ch2
 		go workerSecond(ch1, ch2)
 	}
 	//выводит x*2
